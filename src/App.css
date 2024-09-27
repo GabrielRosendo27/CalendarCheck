@@ -3,3 +3,107 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Estilização da estrutura principal do calendário */
+.calendar-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f9fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões de navegação */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Botão para limpar o mês */
+.clear-month-button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 25px;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+.clear-month-button:hover {
+  background-color: darkred;
+}
+
+/* Estilização dos dias selecionados no calendário */
+.marked-days {
+  margin-top: 20px;
+}
+
+.marked-days h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.marked-days ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.marked-days li {
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+/* Layout grid dos dias do mês */
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.days-grid div {
+  padding: 20px;
+  text-align: center;
+  background-color: lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.days-grid div:hover {
+  background-color: #dcdcdc;
+}
+
+.days-grid div.selected {
+  background-color: lightgreen;
+}
+
+/* Estilo do cabeçalho do calendário */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  font-size: 24px;
+  color: #333;
+}
