@@ -10,7 +10,7 @@ import SessionActions from "./SessionActions";
 const Calendar = () => {
   const [sessions, setSessions] = useState(() => {
     const savedSessions = localStorage.getItem("sessions");
-    return savedSessions ? JSON.parse(savedSessions) : [{ name: "Academia", days: [], id: 1 }];
+    return savedSessions ? JSON.parse(savedSessions) : [{ name: "1", days: [], id: 1 }];
   });
 
   const [currentSessionId, setCurrentSessionId] = useState(1); // ID da Seção ativa
@@ -91,21 +91,25 @@ const Calendar = () => {
   };
 
   return (
-    <div>
+    <div className="section-container">
       <Navigation sessions={sessions} currentSessionId={currentSessionId} setCurrentSessionId={setCurrentSessionId} addSession={addSession} />
       <SessionActions renameSession={renameSession} removeSession={removeSession} />
       <Header currentDate={currentDate} handlePrevMonth={handlePrevMonth} handleNextMonth={handleNextMonth} />
 
       {/* Botão para retornar ao mês atual */}
-      <div className="current-month-button-container">
-        <button onClick={handleCurrentMonth} className="current-month-button">
+      <div className="mes-atual">
+        <button onClick={handleCurrentMonth} className="mes-atual-button">
           Mês Atual
         </button>
       </div>
 
       <DaysGrid daysInMonth={daysInMonth} toggleDay={toggleDay} selectedDays={getCurrentSession()?.days || []} />
 
-      <div className="days-marked">
+      <button onClick={clearMonth} className="clear-month-button">
+        Limpar Mês
+      </button>
+
+      <div className="dias-marcados">
         <h2>Dias Marcados: {getCurrentSession()?.days.length}</h2>
         <ul>
           {getCurrentSession()
@@ -115,10 +119,6 @@ const Calendar = () => {
             ))}
         </ul>
       </div>
-
-      <button onClick={clearMonth} className="clear-month-button">
-        Limpar Mês
-      </button>
     </div>
   );
 };

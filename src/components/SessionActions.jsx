@@ -10,7 +10,9 @@ const SessionActions = ({ renameSession, removeSession }) => {
 
   return (
     <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
-      <button onClick={handleRename}>Renomear Seção</button>
+      <button onClick={handleRename} style={{ background: "yellow", color: "black" }}>
+        Renomear Seção
+      </button>
       <button onClick={removeSession} style={{ backgroundColor: "red", color: "white" }}>
         Remover Seção
       </button>

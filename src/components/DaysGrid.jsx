@@ -27,7 +27,7 @@ const DaysGrid = ({ daysInMonth, toggleDay, selectedDays }) => {
             }}
           >
             {format(day, "d")}
-            {selectedDays.some((selectedDay) => isSameDay(new Date(selectedDay), day)) && <span> X</span>}
+            {selectedDays.some((selectedDay) => isSameDay(new Date(selectedDay), day))}
           </div>
         ))}
       </div>

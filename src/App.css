@@ -3,6 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background: darkslategrey;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
 /* Estilização da estrutura principal do calendário */
 .calendar-container {
   max-width: 900px;
@@ -106,4 +115,51 @@ button:hover {
 .header h2 {
   font-size: 24px;
   color: #333;
+}
+
+.section-container {
+  max-width: 1300px;
+  height: 100vh;
+  margin: 0 auto;
+  background: darkslategrey;
+  padding: 20px;
+}
+.mes-atual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.mes-atual button {
+  background: orange;
+}
+.dias-marcados {
+  margin-top: 20px;
+}
+.dias-marcados ul {
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+.dias-marcados li {
+  color: white;
+}
+.next-prev-month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.next-prev-month h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: orange;
+}
+.next-prev-month button {
+  background: purple;
 }
