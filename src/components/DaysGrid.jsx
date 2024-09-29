@@ -14,7 +14,7 @@ const DaysGrid = ({ daysInMonth, toggleDay, selectedDays }) => {
       </div>
 
       {/* Dias do mês */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "10px", marginTop: "10px" }}>
+      <div className="dias-do-mes">
         {daysInMonth.map((day) => (
           <div
             key={day}

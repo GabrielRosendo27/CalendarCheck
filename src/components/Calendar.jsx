@@ -105,22 +105,24 @@ const Calendar = () => {
 
       <DaysGrid daysInMonth={daysInMonth} toggleDay={toggleDay} selectedDays={getCurrentSession()?.days || []} />
 
+      <div className="dias-marcados">
+        <h2>Dias Marcados: {getCurrentSession()?.days.length}</h2>
+      </div>
+
       <button onClick={clearMonth} className="clear-month-button">
         Limpar Mês
       </button>
-
-      <div className="dias-marcados">
-        <h2>Dias Marcados: {getCurrentSession()?.days.length}</h2>
-        <ul>
-          {getCurrentSession()
-            ?.days.filter((day) => daysInMonth.some((monthDay) => isSameDay(new Date(day), monthDay)))
-            .map((day, index) => (
-              <li key={index}>{format(new Date(day), "EEEE, dd MMMM yyyy", { locale: ptBR })}</li>
-            ))}
-        </ul>
-      </div>
     </div>
   );
 };
 
 export default Calendar;
+{
+  /* <ul>
+  {getCurrentSession()
+    ?.days.filter((day) => daysInMonth.some((monthDay) => isSameDay(new Date(day), monthDay)))
+    .map((day, index) => (
+      <li key={index}>{format(new Date(day), "EEEE, dd MMMM yyyy", { locale: ptBR })}</li>
+    ))}
+</ul> */
+}

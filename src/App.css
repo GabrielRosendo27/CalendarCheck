@@ -13,14 +13,6 @@ a {
   text-decoration: none;
 }
 /* Estilização da estrutura principal do calendário */
-.calendar-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f7f9fc;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
 
 /* Botões de navegação */
 button {
@@ -80,13 +72,20 @@ button:hover {
 }
 
 /* Layout grid dos dias do mês */
-.days-grid {
+/* .days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+} */
+.dias-do-mes {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 10px;
   margin-top: 10px;
 }
-
 .days-grid div {
   padding: 20px;
   text-align: center;
@@ -121,8 +120,14 @@ button:hover {
   max-width: 1300px;
   height: 100vh;
   margin: 0 auto;
-  background: darkslategrey;
+  background: rgb(48, 51, 56);
   padding: 20px;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .mes-atual {
   display: flex;
