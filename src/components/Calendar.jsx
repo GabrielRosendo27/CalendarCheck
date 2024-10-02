@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameDay, addMonths, subMonths } from "date-fns";
+import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameDay, addMonths, subMonths, startOfWeek, endOfWeek } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import DaysGrid from "./DaysGrid";
 import Header from "./Header";
@@ -19,8 +19,8 @@ const Calendar = () => {
   const getCurrentSession = () => sessions.find((session) => session.id === currentSessionId);
 
   const daysInMonth = eachDayOfInterval({
-    start: startOfMonth(currentDate),
-    end: endOfMonth(currentDate),
+    start: startOfWeek(startOfMonth(currentDate), { weekStartsOn: 0 }), // Ajusta para o início da semana do mês
+    end: endOfWeek(endOfMonth(currentDate), { weekStartsOn: 0 }), // Ajusta para o final da semana do mês
   });
 
   useEffect(() => {
